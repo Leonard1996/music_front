@@ -3,6 +3,7 @@ import { SongsService } from '../Songs/songs.service'
 import { Grid, CircularProgress, Box } from '@mui/material'
 import Song from '../Songs/Song'
 import songIdReducer from '../../common/helpers/song.id.reducer'
+import { Pagination } from '@mui/material'
 
 const limit = 10
 
@@ -49,11 +50,22 @@ export default function Favorites() {
   }
 
   useEffect(() => {
+    console.log({ page })
     callgetMyFavoritesService(limit, page)
   }, [page, rerender])
 
   return (
-    <Grid container sx={{ minHeight: '90vh' }} alignItems="center">
+    <Grid container alignItems="center">
+      <Grid container xs={3} />
+      <Grid container xs={9}>
+        <Box m={2}>
+          <Pagination
+            count={Math.ceil(favorites.count / limit)}
+            page={page}
+            onChange={(e, p) => setPage(p)}
+          />
+        </Box>
+      </Grid>
       {isLoading ? (
         <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center' }}>
           <CircularProgress />

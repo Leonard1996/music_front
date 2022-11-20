@@ -34,7 +34,7 @@ export default function Autosuggest({
         />
       </form>
 
-      <Collapse in={isOpen}>
+      <Collapse in={isOpen && suggestions.length}>
         <div className={styles['wrapper__list']}>
           {suggestions
             .filter(filterFunction)
