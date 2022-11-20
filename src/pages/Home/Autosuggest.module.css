@@ -1,0 +1,44 @@
+.wrapper__container {
+    margin:0 auto;
+    width:80%;
+    border-radius:30px;
+    height:100%;
+    padding:8px 32px;
+    border:1px solid #dcdcdc;
+
+}
+
+.wrapper__container:hover {
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+
+.wrapper__container:focus-within {
+    box-shadow: 1px 1px 8px 1px #dcdcdc;
+    outline:none;
+}
+
+.wrapper {
+    position:relative;
+}
+
+
+.wrapper__list {
+    position:absolute;
+    top:1rem;
+    width:98.75%;
+    border: 1px solid;
+    border-left: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-top:none;
+    padding: 4px 4px;
+}
+
+.wrapper__list p:hover {
+   cursor: pointer;
+   font-weight:bold;
+}
+
+
+
+
